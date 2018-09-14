@@ -1,0 +1,12 @@
+
+<ion-content padding id="div3">
+
+   <ion-list no-lines>
+     <ion-item  (click)="openModal(paciente)" *ngFor="let paciente of pacientes" detail-push>
+       <ion-icon name="person" item-start></ion-icon>
+       <h2>{{ paciente.nome }}</h2>
+       <p>{{ paciente.hospital}}</p>
+     </ion-item>
+   </ion-list>
+
+</ion-content>

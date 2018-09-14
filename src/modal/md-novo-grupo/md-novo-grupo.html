@@ -1,0 +1,38 @@
+<ion-header>
+    <ion-navbar color="verde">
+      <ion-title>Novo Grupo</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label><b>Paciente</b></ion-label>
+    <ion-select [(ngModel)]="gender">
+      <ion-option value="m">Pedro Viegas</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Nome do grupo</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Código do grupo: 9#CvW41%8</ion-label>
+  </ion-item>
+
+
+</ion-content>
+<ion-footer padding no-border>
+
+  <button ion-button icon-left color="verde" (click)="fecharModal()">
+    <ion-icon  name="checkmark"></ion-icon>
+    Confirmar
+  </button>
+
+  <button ion-button icon-left color="danger" (click)="fecharModal()">
+    <ion-icon  name="close"></ion-icon>
+    Cancelar
+  </button>
+
+</ion-footer>

@@ -1,0 +1,22 @@
+
+<ion-header no-border>
+  <ion-navbar color="verde">
+    <ion-title>App médico</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding >
+
+  <ion-tabs color = "verde" tabsHighlight = 'true'>
+    <ion-tab [root]="tab1Root" tabIcon="medkit" tabTitle="Pacientes"></ion-tab>
+    <ion-tab [root]="tab2Root" tabIcon="people" tabTitle="Grupos"></ion-tab>
+    <ion-tab [root]="tab3Root" tabIcon="clipboard" tabTitle="Prontuarios"></ion-tab>
+  </ion-tabs>
+
+
+
+</ion-content>

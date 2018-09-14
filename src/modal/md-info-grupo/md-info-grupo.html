@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar color="verde">
+      <ion-title>Informações do Grupo</ion-title>
+        <ion-buttons left>
+            <button ion-button icon-only (click)="fecharModal()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <b>Nome:</b> {{nome}}
+  <br><br>
+  <b>Paciente:</b> {{paciente}}
+  <br><br>
+  <b>Responsável:</b> {{criador}}
+
+</ion-content>

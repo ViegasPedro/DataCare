@@ -1,0 +1,26 @@
+
+
+<ion-menu [content]='menu'>
+
+  <ion-header>
+      <ion-navbar color="verde">
+        <ion-title text-center>Menu</ion-title>
+      </ion-navbar>
+  </ion-header>
+
+
+<ion-content>
+  <ion-list >
+    <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <ion-icon name={{p.icone}} item-start  color = "verde"></ion-icon>
+      <h2>{{p.title}}</h2>
+    </button>
+  </ion-list>
+</ion-content>
+<ion-footer padding no-border>
+
+  <button text-center ion-button clear block color="verde" (click)="logout()">Sair</button>
+
+</ion-footer>
+</ion-menu>
+<ion-nav #menu [root]="rootPage" swipeBackEnabled="false"></ion-nav>

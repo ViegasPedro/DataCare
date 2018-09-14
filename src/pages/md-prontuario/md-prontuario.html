@@ -1,0 +1,22 @@
+
+<ion-header>
+    <ion-navbar color="verde">
+      <ion-title>Detalhes</ion-title>
+        <ion-buttons left>
+            <button ion-button icon-only (click)="fecharModal()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+<b>Data:</b> {{data}}
+<br><br>
+<b>Status:</b> {{status}}
+<br><br>
+<b>Observação:</b> {{observacao}}
+
+</ion-content>

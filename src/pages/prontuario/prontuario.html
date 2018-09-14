@@ -1,0 +1,12 @@
+
+<ion-content padding>
+
+   <ion-list >
+     <ion-item (click)="openModal(prontuario)" *ngFor="let prontuario of prontuarios" detail-push>
+       <ion-icon name="clipboard" item-start ></ion-icon>
+       <h2>{{ prontuario.status }}</h2>
+       <p>{{ prontuario.data}}</p>
+     </ion-item>
+   </ion-list>
+
+</ion-content>

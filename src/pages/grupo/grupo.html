@@ -1,0 +1,36 @@
+<ion-content>
+
+  <ion-label color="verde">Meus Grupos</ion-label>
+
+  <ion-list no-lines>
+    <ion-item (click)="openModal(grupo)" *ngFor="let grupo of gruposAdmin" detail-push>
+      <ion-icon name="contacts" item-start></ion-icon>
+      <h2>{{ grupo.nome }}</h2>
+      <p>{{ grupo.paciente }}</p>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-label color="verde">Grupos que participo</ion-label>
+
+  <ion-list no-lines>
+    <ion-item (click)="openModal(grupo)" *ngFor="let grupo of grupos" detail-push>
+      <ion-icon name="contacts" item-start></ion-icon>
+      <h2>{{ grupo.nome }}</h2>
+      <p>{{ grupo.paciente }}</p>
+    </ion-item>
+  </ion-list>
+
+<ion-footer no-border no-lines>
+  <ion-toolbar color="branco">
+    <ion-buttons end>
+      <button ion-button color="verde" icon-only id="tamanho" (click)="novoGrupo()">
+        <ion-icon name="add-circle" ></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
+
+
+
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar color="verde">
+      <ion-title>{{nome}}</ion-title>
+        <ion-buttons left>
+            <button ion-button icon-only (click)="fecharModal()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-buttons right>
+          <button ion-button icon-only (click)="presentPopover($event)">
+            <ion-icon name="more"></ion-icon>
+          </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list >
+    <ion-item (click)="openModal(prontuario)" *ngFor="let prontuario of prontuarios" detail-push>
+      <ion-icon name="clipboard" item-start></ion-icon>
+      <h2>{{ prontuario.status }}</h2>
+      <p>{{ prontuario.data}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

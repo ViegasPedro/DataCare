@@ -1,0 +1,28 @@
+
+<ion-header>
+    <ion-navbar color="verde">
+      <ion-title>Detalhes</ion-title>
+        <ion-buttons left>
+            <button ion-button icon-only (click)="fecharModal()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+
+
+<ion-content padding>
+<b>Paciente:</b> {{nome}}
+<br><br>
+<b>Hospital:</b> {{hospital}}
+<br><br>
+<b>Endereço (Hospital):</b> {{endereco}}
+<br><br>
+<b>Quarto:</b> {{quarto}}
+<br><br>
+<b>Data da baixa:</b> {{data}}
+
+
+
+</ion-content>
