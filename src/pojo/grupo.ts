@@ -3,7 +3,7 @@ export class Grupo {
   public nome: string;
   public criador: string;
   public paciente: string;
-
+	public teste: string;
 
   constructor(){
 
@@ -30,5 +30,7 @@ export class Grupo {
   toString(){
 
   }
+
+
 
 }
