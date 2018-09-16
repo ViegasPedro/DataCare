@@ -17,6 +17,9 @@ import { MdInfoGrupoPage } from '../modal/md-info-grupo/md-info-grupo';
 import { MdNovoGrupoPage } from '../modal/md-novo-grupo/md-novo-grupo';
 import { MdCodigoPage } from '../modal/md-codigo/md-codigo';
 import { PopoverComponent } from '../components/popover/popover';
+import { UsuarioProvider } from '../providers/usuario/usuario';
+
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { PopoverComponent } from '../components/popover/popover';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp, {tabsPlacement: 'top',})
+    IonicModule.forRoot(MyApp, {tabsPlacement: 'top',}),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -58,7 +62,8 @@ import { PopoverComponent } from '../components/popover/popover';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UsuarioProvider
   ]
 })
 export class AppModule {}
