@@ -8,8 +8,8 @@ import {Observable} from 'rxjs/Observable';
 @Injectable()
 export class UsuarioProvider {
 	private URL_PADRAO: string = "http://localhost:8080/usuarios/"
-	
- 
+
+
   	constructor(private http: Http) {
 
   	}
