@@ -25,7 +25,7 @@ export class PacientePage {
 
   openModal(paciente){
     let data = paciente;
-    let myModal = this.modal.create(MdPacientePage, data);
+    let myModal = this.modal.create(MdPacientePage, {data});
     console.log(data);
     myModal.present();
   }

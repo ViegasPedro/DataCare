@@ -33,9 +33,9 @@ export class MdPacientePage {
   }
 
   pegarPaciente(){
-    this.paciente = this.navParams.get();
-    if(this.paciente != null){
-    console.log(paciente);
+    this.paciente = this.navParams.get("data");
+    if(this.paciente){
+    console.log(this.paciente.pacientes.nome + 'Paciente tela md-paciente');
     }else {
     console.log("ERRO");
     }
