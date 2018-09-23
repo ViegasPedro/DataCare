@@ -14,7 +14,7 @@ export class MdPacientePage {
   quarto;
   hospital;
 
-  paciente : any;
+  usuario : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCrtl: ViewController) {
     // this.nome = this.navParams.get('nome');
@@ -23,7 +23,7 @@ export class MdPacientePage {
     // this.quarto = this.navParams.get('cpf');
     // this.hospital = this.navParams.get('hospital');
 
-    this.pegarPaciente();
+    this.pegarUsuario();
 
   }
 
@@ -32,10 +32,10 @@ export class MdPacientePage {
     this.viewCrtl.dismiss();
   }
 
-  pegarPaciente(){
-    this.paciente = this.navParams.get("data");
-    if(this.paciente){
-    console.log(this.paciente.pacientes.nome + 'Paciente tela md-paciente');
+  pegarUsuario(){
+    this.usuario = this.navParams.get("data");
+    if(this.usuario){
+    console.log(this.usuario.nome + 'Paciente tela md-paciente');
     }else {
     console.log("ERRO");
     }

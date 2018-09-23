@@ -7,7 +7,7 @@ import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class UsuarioProvider {
-	private URL_PADRAO: string = "http://localhost:8080/usuarios/"
+	private URL_PADRAO: string = "http://localhost:8080/usuarios/1"
 
 
   	constructor(private http: Http) {
@@ -33,6 +33,18 @@ export class UsuarioProvider {
   		console.log(error);
   		return Observable.throw(error.json().error || "Server error")
   	}
+  	
+  	private extractDataUser(res: Response){
+  		return res.json().pacientes;
+  	}
+
+  	getPacientesUser(){
+  		return this.http.get(this.URL_PADRAO)
+  		.do(this.logResponse)
+  		.map(this.extractDataUser)
+  		.catch(this.catchError)
+  	}
 
 
 }
+
