@@ -3,7 +3,7 @@ import { NavController, NavParams, ModalController, ToastController} from 'ionic
 import { MdPacientePage } from '../md-paciente/md-paciente'
 import { Paciente } from '../../pojo/paciente';
 import { Usuario } from '../../pojo/usuario';
-import { UsuarioProvider } from '../../providers/usuario/usuario'
+import { UsuarioProvider } from '../../providers/usuario/usuario';
 
 
 @Component({
@@ -27,7 +27,6 @@ export class PacientePage {
   openModal(usuario){
     let data = usuario;
     let myModal = this.modal.create(MdPacientePage, {data});
-    console.log(data);
     myModal.present();
   }
 
