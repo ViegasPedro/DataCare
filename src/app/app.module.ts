@@ -20,6 +20,7 @@ import { PopoverComponent } from '../components/popover/popover';
 import { UsuarioProvider } from '../providers/usuario/usuario';
 
 import { HttpModule } from '@angular/http';
+import { GrupoProvider } from '../providers/grupo/grupo';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { HttpModule } from '@angular/http';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UsuarioProvider
+    UsuarioProvider,
+    GrupoProvider
   ]
 })
 export class AppModule {}

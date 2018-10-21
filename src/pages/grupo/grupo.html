@@ -3,21 +3,10 @@
   <ion-label color="verde">Meus Grupos</ion-label>
 
   <ion-list no-lines>
-    <ion-item (click)="openModal(grupo)" *ngFor="let grupo of gruposAdmin" detail-push>
+    <ion-item (click)="openModal(grupo)" *ngFor="let grupo of gruposList" detail-push>
       <ion-icon name="contacts" item-start></ion-icon>
       <h2>{{ grupo.nome }}</h2>
-      <p>{{ grupo.paciente }}</p>
-    </ion-item>
-  </ion-list>
-
-
-  <ion-label color="verde">Grupos que participo</ion-label>
-
-  <ion-list no-lines>
-    <ion-item (click)="openModal(grupo)" *ngFor="let grupo of grupos" detail-push>
-      <ion-icon name="contacts" item-start></ion-icon>
-      <h2>{{ grupo.nome }}</h2>
-      <p>{{ grupo.paciente }}</p>
+      <p>{{ grupo.admin.pacientes.id }}</p>
     </ion-item>
   </ion-list>
 
