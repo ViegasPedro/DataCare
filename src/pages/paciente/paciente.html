@@ -1,12 +1,22 @@
 
-<ion-content padding id="div3">
+<ion-content padding id="div3" class="corFundo">
 
-   <ion-list no-lines>
-     <ion-item  (click)="openModal(paciente)" *ngFor="let paciente of pacientesList" detail-push>
-       <ion-icon name="person" item-start></ion-icon>
-       <h2>{{ paciente.nome }}</h2>
-       <p>{{ paciente.id}}</p>
-     </ion-item>
-   </ion-list>
+   <ion-list >
+ <ion-card (click)="openModal(paciente)" *ngFor="let paciente of pacientesList" detail-push class = "sombra">
+  <ion-card-header >
+   <h1 ion-text color = "azul">{{ paciente.nome }}</h1> 
+  </ion-card-header>
+  
+  <ion-card-content>
+  	<ion-label ion-text color="cinza2">Hospital </ion-label>
+	<ion-label class="fonteConteudo">{{paciente.hospital.razaoSocial}} </ion-label>
+    <ion-label ion-text color="cinza2">Endereço</ion-label>
+    <ion-label class="fonteConteudo">{{paciente.hospital.endereco}}</ion-label>
+  </ion-card-content>
+
+</ion-card>
+  </ion-list>
 
 </ion-content>
+
+

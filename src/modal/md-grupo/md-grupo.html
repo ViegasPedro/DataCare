@@ -1,6 +1,6 @@
 <ion-header>
-    <ion-navbar color="verde">
-      <ion-title>{{nome}}</ion-title>
+    <ion-navbar color="verde"> 
+      <ion-title>Grupos</ion-title>
         <ion-buttons left>
             <button ion-button icon-only (click)="fecharModal()">
                 <ion-icon name="arrow-back"></ion-icon>
@@ -15,14 +15,24 @@
 </ion-header>
 
 
-<ion-content padding>
-
-  <ion-list >
+<ion-content>
+  <ion-card color="cinzaClaro" class="sombra">
+    <ion-card-content>
+      <ion-item color="cinzaClaro">
+        <ion-icon name="contacts" item-left></ion-icon>
+        <h2 item-rigth>{{nome}}</h2>
+      </ion-item>
+      <button ion-button clear color="azul">Convidar</button>
+      <button ion-button clear color="azul">Editar</button>
+    </ion-card-content>
+  </ion-card>
+  <ion-list padding >
     <ion-item (click)="openModal(prontuario)" *ngFor="let prontuario of prontuarios" detail-push>
-      <ion-icon name="clipboard" item-start></ion-icon>
-      <h2>{{ prontuario.status }}</h2>
-      <p>{{ prontuario.data}}</p>
+     <ion-icon name="clipboard" item-start></ion-icon>
+     <h2>{{ prontuario.status }}</h2>
+     <p>{{ prontuario.data}}</p>
     </ion-item>
   </ion-list>
+  
 
 </ion-content>

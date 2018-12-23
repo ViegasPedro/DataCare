@@ -17,6 +17,7 @@ export class GrupoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modal: ModalController,
    public alertCtrl:AlertController, public grupoProvider : GrupoProvider) {
+    
       this.getGrupos();
   }
 
