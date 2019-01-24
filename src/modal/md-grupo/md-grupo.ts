@@ -1,40 +1,32 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, ModalController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ModalController, AlertController} from 'ionic-angular';
 import { Grupo } from '../../pojo/grupo';
 import { MdProntuarioPage } from '../../pages/md-prontuario/md-prontuario';
 import { Prontuario } from '../../pojo/prontuario';
 import { MdInfoGrupoPage } from '../md-info-grupo/md-info-grupo';
 import { PopoverController } from 'ionic-angular/components/popover/popover-controller';
 import { PopoverComponent } from '../../components/popover/popover';
-
+import { MdNovoGrupoPage } from '../md-novo-grupo/md-novo-grupo';
+import { GrupoProvider } from '../../providers/grupo/grupo';
 @Component({
   selector: 'page-md-grupo',
   templateUrl: 'md-grupo.html',
 })
 export class MdGrupoPage {
-  private prontuarios : Array<Prontuario> = [];
+  prontuarios = [];
   nome;
   paciente;
-  criador;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCrtl: ViewController, public modal: ModalController, public popoverCtrl: PopoverController) {
-    this.nome = this.navParams.get('nome');
-    this.paciente = this.navParams.get('paciente');
-    this.criador = this.navParams.get('criador');
+  adminId;
+  id;
 
-    let prontuario = new Prontuario();
-    prontuario.setData("08/05/2018");
-    prontuario.setStatus("Piorou/entre em contato");
-    prontuario.setObservacao("Paciente piorou devido a alergia a algum medicamento, responsaveis pelo paciente Pedro, por favor entrar em contato");
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCrtl: ViewController, 
+    public modal: ModalController, public popoverCtrl: PopoverController, 
+    public alertController: AlertController, public grupoProvider : GrupoProvider) {
+    this.pegarGrupo();
+    this.getGruposProntuario(this.id);
 
-    let prontuario2 = new Prontuario();
-    prontuario2.setData("09/04/2018");
-    prontuario2.setStatus("Paciente em melhora");
-    prontuario2.setObservacao("Paciente melhorou bastante e está quase curado");
 
-    this.prontuarios = [
-      prontuario, prontuario2
-    ]
-
+    
   }
 
   ionViewDidLoad() {
@@ -72,9 +64,32 @@ export class MdGrupoPage {
     });
   }
 
+  showAlert(){
+    const alert = this.alertController.create({
+      title:'Código do Grupo: DSR7JZ',
+      message:'Diga a seus amigos para entrarem com esse código',
+      buttons:['OK, ENTENDI']
+    });
+    alert.present();
+  }
 
+  openNovoGrupo(){
+    let myModal = this.modal.create(MdNovoGrupoPage);
+    myModal.present();
+  }
 
+  pegarGrupo(){
+    this.nome = this.navParams.get('nome');
+    this.paciente = this.navParams.get('paciente');
+    this.adminId = this.navParams.get('adminId');
+    this.id = this.navParams.get('id');
+  }
 
+  getGruposProntuario(id){
+    console.log("inside getGruposProntuarios MdGrupoPage ",id)
+    this.grupoProvider.getGruposProntuarios(id).subscribe(data => {this.prontuarios = data});
+    
+  }
 
 
 

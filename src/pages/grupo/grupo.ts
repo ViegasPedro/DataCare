@@ -56,6 +56,7 @@ export class GrupoPage {
     this.grupoProvider.getGrupos().subscribe(data => this.gruposList = data);
   }
 
+ 
 
 
 }

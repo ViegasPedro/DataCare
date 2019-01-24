@@ -7,7 +7,8 @@ import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class GrupoProvider {
-	private URL_PADRAO: string = "http://localhost:8080/grupos/"
+	private URL_PADRAO: string = "http://localhost:8080/usuarios/grupos/1"
+  private URL_GET_PRONTUARIOS = "http://localhost:8080/grupos/prontuarios/"
 
   constructor(public http: Http) {
     
@@ -33,4 +34,10 @@ export class GrupoProvider {
   		return Observable.throw(error.json().error || "Server error: get grupos")
   	}
 
+    getGruposProntuarios(id){
+      return this.http.get(this.URL_GET_PRONTUARIOS + id)
+      .do(this.logResponse)
+      .map(this.extractData)
+      .catch(this.catchError)
+    }
 }

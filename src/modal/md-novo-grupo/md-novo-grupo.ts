@@ -12,7 +12,7 @@ export class MdNovoGrupoPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MdNovoGrupoPage');
+    
   }
   fecharModal(){
     this.viewCrtl.dismiss();

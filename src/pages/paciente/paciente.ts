@@ -15,10 +15,10 @@ export class PacientePage {
   usuario : any;
   pacientesList = [];
 
+
   constructor( public navCtrl: NavController, public navParams: NavParams,   public modal: ModalController,
     public toastController: ToastController, public usuarioProvider: UsuarioProvider  ){
 
-    this.getPacientes();
     this.getPacientesUser();
 
   }
@@ -30,13 +30,9 @@ export class PacientePage {
     myModal.present();
   }
 
-  getPacientes(){
-    this.usuarioProvider.getPacientes().subscribe(data => this.usuario = data);
-
-  }
-
   getPacientesUser(){
-    this.usuarioProvider.getPacientesUser().subscribe(data => this.pacientesList = data);
+    this.usuarioProvider.getPacientesUser().subscribe(data => {this.pacientesList = data});
+  
   }
 
 }

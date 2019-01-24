@@ -6,7 +6,7 @@
     <ion-item (click)="openModal(grupo)" *ngFor="let grupo of gruposList" detail-push>
       <ion-icon name="contacts" item-start></ion-icon>
       <h2>{{ grupo.nome }}</h2>
-      <p>{{ grupo.admin.pacientes.id }}</p>
+      <p>{{ grupo.paciente }}</p>
     </ion-item>
   </ion-list>
 

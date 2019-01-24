@@ -24,4 +24,5 @@ export class MdInfoGrupoPage {
     this.viewCrtl.dismiss()
   }
 
+
 }

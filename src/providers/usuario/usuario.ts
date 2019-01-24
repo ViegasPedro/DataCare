@@ -7,22 +7,15 @@ import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class UsuarioProvider {
-	private URL_PADRAO: string = "http://localhost:8080/usuarios/1"
-	private URL_PRONTUARIO : string = "http://localhost:8080/prontuarios/paciente/2"
+	private URL_PADRAO: string = "http://localhost:8080/usuarios/pacientes/1"
+	private URL_PRONTUARIO : string = "http://localhost:8080/usuarios/prontuarios/2"
 
 
   	constructor(private http: Http) {
 
   	}
 
-  	getPacientes(){
-  		return this.http.get(this.URL_PADRAO)
-  		.do(this.logResponse)
-  		.map(this.extractData)
-  		.catch(this.catchError)
-  	}
-
-  	private logResponse(res: Response){
+   	private logResponse(res: Response){
   		console.log(res);
   	}
 
@@ -36,7 +29,7 @@ export class UsuarioProvider {
   	}
   	
   	private extractDataUser(res: Response){
-  		return res.json().pacientes;
+  		return res.json();
   	}
 
   	private extractProntuariosUser(res: Response){
